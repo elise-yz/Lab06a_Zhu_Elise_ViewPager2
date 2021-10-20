@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,10 @@ import com.google.android.material.tabs.TabLayoutMediator;
 public class MainFragment extends Fragment {
     ViewPager2 mViewPager2;
     int position;
+    //int id;
+    //use this page for help: https://stackoverflow.com/questions/45786697/adding-multiple-images-to-viewpager
+    //add these image files to drawable folder:
+    //static int[] images = {R.drawable.image001, R.drawable.image002, R.drawable.image003, R.drawable.image004, R.drawable.image005, R.drawable.image006, R.drawable.image007, R.drawable.image008, R.drawable.image009, R.drawable.image010}
 
     public static Fragment newInstance(ViewPager2 mViewPager2, int position) {
         MainFragment fragment = new MainFragment();
@@ -28,7 +33,10 @@ public class MainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_main, container, false);
+//        ImageView imageView = (ImageView) view.findViewById(R.id.image);
+//        imageView.setImageResource(images[position]);
+        return view;
     }
 
     @Override
@@ -39,6 +47,6 @@ public class MainFragment extends Fragment {
                 (tab, position) -> tab.setText("I am "+ (position+1))
         ).attach();
         Button mButton = view.findViewById(R.id.button);
-        mButton.setText("Press " + position);
+        mButton.setText("Press " + (position+1));
     }
 }

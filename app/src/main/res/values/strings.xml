@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Lab06 ViewPager2</string>
     <string name="button_text">press me</string>
+    <string name="image_name">R.id.image%1$d</string>
 </resources>
